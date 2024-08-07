@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Home{% endblock %}
+
+<body>
+
+{% block content %}
+
+
+    <div class="container mt-5">
+        <h2 class="text-center">Nmap Scan</h2>
+        <form method="post" class="mt-4">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="target">Target:</label>
+                <input type="text" class="form-control" id="target" name="target" required>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Scan</button>
+            </div>
+        </form>
+
+        {% if scan_results %}
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Scan Results</h3>
+                    {% if "Error" in scan_results %}
+                        <div class="alert alert-danger">{{ scan_results }}</div>
+                    {% else %}
+                        <pre>{{ scan_results|safe }}</pre>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+    {% if geoip_results %}
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">GeoIP Results</h3>
+                    {% if "Error" in geoip_results %}
+                        <div class="alert alert-danger">{{ geoip_results }}</div>
+                    {% else %}
+                    <pre>{{ geoip_results|safe }}</pre>
+
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock content %}
+

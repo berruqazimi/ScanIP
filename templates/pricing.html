@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Home{% endblock %}
+
+<body>
+
+{% block content %}
+
+    <section class="container my-5">
+        <h1 class="text-center mb-4">Pricing Plans</h1>
+        <div class="row">
+            <!-- Daily Plan -->
+            <div class="col-md-4">
+                <div class="card pricing-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Daily Plan</h3>
+                        <p class="card-price">$5</p>
+                        <p class="card-duration">Per Day</p>
+                        <a href="#" class="btn btn-primary">Choose Plan</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Monthly Plan -->
+            <div class="col-md-4">
+                <div class="card pricing-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Monthly Plan</h3>
+                        <p class="card-price">$30</p>
+                        <p class="card-duration">Per Month</p>
+                        <a href="#" class="btn btn-primary">Choose Plan</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Yearly Plan -->
+            <div class="col-md-4">
+                <div class="card pricing-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Yearly Plan</h3>
+                        <p class="card-price">$300</p>
+                        <p class="card-duration">Per Year</p>
+                        <a href="#" class="btn btn-primary">Choose Plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to IP Scanner</h1>
+            <p>Innovative solutions for a digital world.</p>
+            <a href="{% url 'register' %}" class="btn btn-primary btn-lg">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/350x200?text=Feature+1" class="card-img-top" alt="Feature 1">
+                        <div class="card-body">
+                            <h3 class="card-title">Feature 1</h3>
+                            <p class="card-text">Detailed description of Feature 1. Explain why it is beneficial to the users and how it stands out.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/350x200?text=Feature+2" class="card-img-top" alt="Feature 2">
+                        <div class="card-body">
+                            <h3 class="card-title">Feature 2</h3>
+                            <p class="card-text">Detailed description of Feature 2. Explain why it is beneficial to the users and how it stands out.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
